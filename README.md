@@ -99,7 +99,3 @@ For educational and research purposes.
 
 ## Contact
 For questions or contributions, contact the repository owner.
-
----
-
-Let me know if you want this written directly to your README.md file.

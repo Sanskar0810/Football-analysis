@@ -14,3 +14,7 @@ output_heatmaps/
 yolov8x.pt
 models/
 runs/detect/
+/output_heatmaps_old
+/output_videos_old
+/output_videos
+/output_videos

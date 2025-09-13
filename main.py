@@ -12,7 +12,7 @@ from heatmap_generator import HeatMapGenerator
 
 def main():
     # Read Video
-    video_path = r"C:\Users\sanskar\OneDrive\Desktop\FA\project\input_videos\match_trim.mp4"
+    video_path = r"C:\Users\sanskar\OneDrive\Desktop\FA\project\input_videos\match.mp4"
     output_path = r"C:\Users\sanskar\OneDrive\Desktop\FA\project\output_videos\output_video.avi"
     
     print(f"🔍 Attempting to read: {video_path}")
@@ -84,12 +84,18 @@ def main():
     # Draw output 
     ## Draw object Tracks
     output_video_frames = []
-    for frame_num, frame in enumerate(video_frames):
-        frame = frame.copy()
+    num_frames = min(len(video_frames),
+                    len(tracks["players"]),
+                    len(tracks["ball"]),
+                    len(tracks["referees"]))
+
+    for frame_num in range(num_frames):
+        frame = video_frames[frame_num].copy()
 
         player_dict = tracks["players"][frame_num]
         ball_dict = tracks["ball"][frame_num]
         referee_dict = tracks["referees"][frame_num]
+
 
         # Draw players
         for track_id, player in player_dict.items():
@@ -151,6 +157,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
-    
-    #iugtgtriuetiuiu
